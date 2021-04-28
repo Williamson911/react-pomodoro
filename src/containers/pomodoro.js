@@ -1,3 +1,4 @@
+import {useCallback} from "react";
 import {useTimer} from "../core/hooks/use-timer";
 
 import classNames from "classnames";
@@ -14,10 +15,19 @@ const Pomodoro = () => {
         console.log("Timer is finished"),
     );
 
-    const handleMinus = () => setSeconds(val => Math.max(val - 60, 0));
-    const handleReset = () => setSeconds(SESSION_DURATION);
-    const handlePlayPause = () => setRunning(!running);
-    const handlePlus = () => setSeconds(val => val + 60);
+    const handleMinus = useCallback(
+        () => setSeconds(val => Math.max(val - 60, 0)),
+        [setSeconds],
+    );
+    const handleReset = useCallback(() => setSeconds(SESSION_DURATION), [
+        setSeconds,
+    ]);
+    const handlePlayPause = useCallback(() => setRunning(val => !val), [
+        setRunning,
+    ]);
+    const handlePlus = useCallback(() => setSeconds(val => val + 60), [
+        setSeconds,
+    ]);
 
     return (
         <div className={classNames("columns", "is-mobile", "is-centered")}>

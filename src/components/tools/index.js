@@ -3,7 +3,7 @@ import Button from "./button";
 
 import {NBSP} from "../../core/constants";
 
-const Tools=({running=false, onMinus, onReset, onPlayPause, onPlus})=>(
+const Tools = ({running = false, onMinus, onReset, onPlayPause, onPlus}) => (
     <div className={"is-flex"}>
         <Button
             label={"-"}
@@ -14,10 +14,11 @@ const Tools=({running=false, onMinus, onReset, onPlayPause, onPlus})=>(
         {"NBSP"}
         <Button label={"reset"} disabled={running} onClick={onReset} />
         {"NBSP"}
-            <Button label={running?"pause}":"start"}
-                title={'${running?"Pause":"Start"} the timer'}
-                onClick={onPlayPause}
-                />
+        <Button
+            label={running ? "pause}" : "start"}
+            title={'${running?"Pause":"Start"} the timer'}
+            onClick={onPlayPause}
+        />
         {"NBSP"}
         <Button
             label={"+"}
@@ -28,12 +29,12 @@ const Tools=({running=false, onMinus, onReset, onPlayPause, onPlus})=>(
     </div>
 );
 
-Tools.PropTypes={
+Tools.PropTypes = {
     running: PropTypes.bool,
     onMinus: PropTypes.func.isRequired,
     onReset: PropTypes.func.isRequired,
     onPlayPause: PropTypes.func.isRequired,
     onPlus: PropTypes.func.isRequired,
-}
+};
 
 export default Tools;

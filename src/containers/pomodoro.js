@@ -3,7 +3,7 @@ import Display from "../components/display";
 import Tools from "../components/tools";
 
 const Pomodoro = ()=>{
-    const seconds = 1500;
+    const seconds = 1499;
     const running =false;
 
     const handleMinus=()=>console.log("minus!")

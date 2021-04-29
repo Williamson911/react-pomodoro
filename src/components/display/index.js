@@ -1,4 +1,4 @@
-import Prototypes from "prop-types";
+import PropTypes from "prop-types";
 import Cyphers from "./cyphers";
 
 const Display = ({seconds}) => {

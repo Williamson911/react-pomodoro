@@ -1,9 +1,10 @@
 import {useCallback, useState} from "react";
 import {useTimer} from "../core/hooks/use-timer";
 
-import classNames from "classnames";
+import classnames from "classnames";
 import Display from "../components/display";
 import Tools from "../components/tools";
+import Modal from "../components/modal";
 
 import {SESSION_DURATION} from "../core/constants";
 
@@ -27,6 +28,7 @@ const Pomodoro = () => {
     const handlePlus = useCallback(() => setSeconds(val => val + 60), [
         setSeconds,
     ]);
+
     const handleCloseModal = useCallback(() => {
         setShowModal(false);
         handleReset();
@@ -37,8 +39,8 @@ const Pomodoro = () => {
     }, [handleCloseModal, handlePlayPause]);
 
     return (
-        <div className={classNames("columns", "is-mobile", "is-centered")}>
-            <div className={classNames("column", "is-half")}>
+        <div className={classnames("columns", "is-mobile", "is-centered")}>
+            <div className={classnames("column", "is-half")}>
                 <Display seconds={seconds} />
                 <Tools
                     running={running}

@@ -1,4 +1,3 @@
-/* eslint-disable arrow-body-style */
 import PropTypes from "prop-types";
 import {useCallback} from "react";
 import {createPortal} from "react-dom";
@@ -26,12 +25,9 @@ const Modal = ({onClose, onRestart}) => {
                 <p>{"Please, take a short break!"}</p>
                 <Display seconds={seconds} />
                 <div className={"is-flex"}>
-                    <Button
-                        label={"Stop"}
-                        onClick={stopThen{onClose}}
-                    />
+                    <Button label={"Stop"} onClick={stopThen(onClose)} />
                     {NBSP}
-                    <Button label={"Restart"} onClick={stopThen{onRestart}} />
+                    <Button label={"Restart"} onClick={stopThen(onRestart)} />
                 </div>
             </div>
         </div>,
@@ -43,4 +39,5 @@ Modal.propTypes = {
     onClose: PropTypes.func.isRequired,
     onRestart: PropTypes.func.isRequired,
 };
+
 export default Modal;

@@ -40,7 +40,7 @@ const Modal = ({onClose, onRestart}) => {
 };
 
 Modal.propTypes = {
-    onClose: Proptypes.func.isRequired,
-    onRestart: Propstypes.func.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onRestart: PropTypes.func.isRequired,
 };
 export default Modal;

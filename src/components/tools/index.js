@@ -29,7 +29,7 @@ const Tools = ({running = false, onMinus, onReset, onPlayPause, onPlus}) => (
     </div>
 );
 
-Tools.PropTypes = {
+Tools.propTypes = {
     running: PropTypes.bool,
     onMinus: PropTypes.func.isRequired,
     onReset: PropTypes.func.isRequired,
